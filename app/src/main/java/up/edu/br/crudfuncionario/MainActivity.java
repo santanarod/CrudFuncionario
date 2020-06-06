@@ -12,6 +12,7 @@ import android.widget.Toast;
 
 import up.edu.br.crudfuncionario.dao.FuncionarioDao;
 import up.edu.br.crudfuncionario.model.Funcionario;
+import up.edu.br.crudfuncionario.sqlite.Conexao;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -19,6 +20,13 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        new Conexao(getApplicationContext(),
+                "funcionario.db",
+                null,
+                2);
+
+
     }
 
     public void salvar(View view) {
